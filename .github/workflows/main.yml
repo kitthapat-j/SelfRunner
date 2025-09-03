@@ -1,10 +1,8 @@
 name: Deploy to Kubernetes
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build-and-deploy:
     runs-on: self-hosted
@@ -17,7 +15,5 @@ jobs:
         run: |
           
           kubectl apply -f k8s/deployment.yaml
-
-       
-          kubectl get pods -l app=eshopweb-app
+          kubectl get pods -l app=eshop-web
           kubectl get services
